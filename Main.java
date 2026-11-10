@@ -1,7 +1,7 @@
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
-public class SteamInstaller {
+public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //asks for ID #
@@ -15,7 +15,7 @@ public class SteamInstaller {
             CreateFolder(Path,"LocalInvoker");//Creates Directory for install location
             Path+="LocalInvoker";
             CreateFile(Path,"invoke.bat");
-            System.out.println("Please now put your exe file into the file \"Local Invoker\" and type in its name (including the .exe)
+            System.out.println("Please now put your exe file into the file \"Local Invoker\" and type in its name (including the .exe) into the terminal.\n");
 
         }
         else{
