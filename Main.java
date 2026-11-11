@@ -2,10 +2,10 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 public class Main{
-    public static void main(String[] args) {
+    static void main() {
         Scanner sc = new Scanner(System.in);
         //asks for ID #
-        System.out.print("This Software will create files in your device within a folder named \"Local Invoker\",\n By continuing you confirm understand this.\n");
+        System.out.print("This Software will create files in your device within a folder named \"Local Invoker\",\n By continuing you confirm understand this.\nAdditionally, you cant use this software twice, if you would like to use it a second time,\nGo into the bat file and edit the run (filename) to run your new exe.\n");
         System.out.println("Enter Student ID (Without the S)");
         int ID = sc.nextInt();
         //makes sure ID is valid
@@ -16,7 +16,9 @@ public class Main{
             Path+="LocalInvoker";
             CreateFile(Path,"invoke.bat");
             System.out.println("Please now put your exe file into the file \"Local Invoker\" and type in its name (including the .exe) into the terminal.\n");
-
+            String exeName = sc.nextLine();
+            WriteInvoke(Path,exeName);
+            System.out.println("READY! run the bat file to run the exe!");
         }
         else{
             System.out.println("ID Invalid.");
@@ -49,7 +51,6 @@ public class Main{
             }
         } catch (IOException e) {
             System.out.println("An error occurred while creating the file.");
-            e.printStackTrace();
         }
     }
 
